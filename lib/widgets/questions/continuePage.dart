@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/routes.dart';
 
-class Continuepage extends StatelessWidget {
+class ContinuePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,7 +9,7 @@ class Continuepage extends StatelessWidget {
         children: [
           
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage("assets/img/background_vale_sao_francisco.png"), 
                 fit: BoxFit.cover,
@@ -19,7 +20,7 @@ class Continuepage extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Container(
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -27,7 +28,7 @@ class Continuepage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Text(
+                    const Text(
                       'Parabéns! Você acertou!!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -36,16 +37,16 @@ class Continuepage extends StatelessWidget {
                         color: Colors.black,
                       ),
                     ),
-                    SizedBox(height: 20),
-                    Text(
+                    const SizedBox(height: 20),
+                    const Text(
                       'Ir para a próxima pergunta?',
                       textAlign: TextAlign.center,
                       style: TextStyle(fontSize: 16, color: Colors.black54),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/proximaPagina');
+                        Navigator.pushNamed(context, MyRoutes.question);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.green,
@@ -53,8 +54,8 @@ class Continuepage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                         ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
+                      child: const Padding(
+                        padding: EdgeInsets.symmetric(
                             vertical: 12.0, horizontal: 24.0),
                         child: Text(
                           'Continuar',

@@ -48,7 +48,7 @@ class _Question1State extends State<Question1> {
     Future.delayed(Duration(seconds: 1), () {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => Continuepage()),
+        MaterialPageRoute(builder: (context) => ContinuePage()),
       );
     });
   }
