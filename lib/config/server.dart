@@ -1,7 +1,6 @@
 import 'dart:convert'; 
-import 'package:http/http.dart' as http; 
-
-const API_URL = "http://localhost:3000";
+import 'package:http/http.dart' as http;
+import 'package:trivia_game/config/global.dart'; 
 
 Future<dynamic> fetchAPI(String endpoint) async {
   try {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/jsonText.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question.dart';
 
 class MainButton extends StatefulWidget {
@@ -24,7 +25,7 @@ class MainButtonState extends State<MainButton> {
         onPressed: () => {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BasicQuestion()),
+            MaterialPageRoute(builder: (context) => BasicQuestion(basicQuestion: testQuestion)),
           )
         }, 
         child: 
