@@ -1,5 +1,5 @@
 import 'package:trivia_game/config/server.dart';
-import 'package:trivia_game/models/BasicQuestion.dart';
+import 'package:trivia_game/models/basic_question_model.dart';
 
 class BasicQuestionController { 
   static final BasicQuestionController _instance = BasicQuestionController._internal();
