@@ -9,15 +9,15 @@ class BasicQuestionController {
   BasicQuestionController._internal();
 
 
-  Future<BasicQuestion> getOneRandomBasicQuestion() async{
+  Future<BasicQuestioModel> getOneRandomBasicQuestion() async{
     final basicQuestion = await fetchAPI('/question/random') as Map<String, dynamic>;
-    return BasicQuestion.fromMap(basicQuestion); 
+    return BasicQuestioModel.fromMap(basicQuestion); 
   }
 
-  Future<List<BasicQuestion>> getSomeRandomBasicQuestion(int take) async {
+  Future<List<BasicQuestioModel>> getSomeRandomBasicQuestion(int take) async {
     final someBasicQuestions = await fetchAPI('/question/random') as List<dynamic>;
     return someBasicQuestions
-            .map((question) => BasicQuestion.fromMap(question as Map<String, dynamic>))
+            .map((question) => BasicQuestioModel.fromMap(question as Map<String, dynamic>))
             .toList();
   }
 }

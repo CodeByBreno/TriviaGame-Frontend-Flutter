@@ -1,10 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/models/basic_question_model.dart';
 import 'package:trivia_game/widgets/basic_question/question_text.dart';
 import 'package:trivia_game/widgets/basic_question/textualOption.dart';
 import 'package:trivia_game/widgets/widgets_questions/continue_page.dart';
 import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
 
+Map<String, dynamic> basicQuestionMap = {
+  'id_basic_question': '12345',
+  'text': 'Qual destas árvores é nativa da Caatinga, uma vegetação típica da região do Vale do São Francisco?',
+  'QUESTION': 'Questão de exemplo',
+  'answer_a': 'Aroeira',
+  'answer_b': 'Eucalipto',
+  'answer_c': 'Pinheiro',
+  'answer_d': 'Mangueira',
+  'answer_e': 'Caju',
+  'answer_f': 'Cabeludinha',
+  'correct': 'A', 
+  'type': 'Múltipla escolha',
+  'time': 30.0,
+};
+
 class BasicQuestion extends StatefulWidget {
+  BasicQuestioModel basicQuestion;
+
+  BasicQuestion({
+    super.key, 
+    required this.basicQuestion
+  });
+
   @override
   BasicQuestionState createState() => BasicQuestionState();
 }
@@ -19,6 +42,14 @@ class BasicQuestionState extends State<BasicQuestion> {
   Color optionBColor = Colors.white;
   Color optionCColor = Colors.white;
   Color optionDColor = Colors.white;
+
+  void handleClickOption(VoidCallback hideOption, String option, String correctOption) {
+    if (option != correctOption) {
+      _handleIncorrectOption(hideOption, option);
+    } else {
+      _handleCorrectOption();
+    }
+  }
 
   void _handleIncorrectOption(VoidCallback hideOption, String option) {
     setState(() {
@@ -55,6 +86,8 @@ class BasicQuestionState extends State<BasicQuestion> {
 
   @override
   Widget build(BuildContext context) {
+    final BasicQuestioModel question = widget.basicQuestion;
+
     return DefaultBackground(
       content: 
         SizedBox.expand(
