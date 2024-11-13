@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
 import 'package:trivia_game/widgets/basic_question/question_text.dart';
 import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
-import 'package:trivia_game/widgets/basic_question/list_options_basic_question.dart';
-import 'package:trivia_game/widgets/basic_question/option_question_representation.dart';
+import 'package:trivia_game/widgets/basic_question/basic_question_list_options.dart';
+import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
 class BasicQuestion extends StatefulWidget {
   final BasicQuestioModel basicQuestion;
@@ -34,7 +34,7 @@ class BasicQuestionState extends State<BasicQuestion> {
               Center(
                 child: QuestionText(text: question.text),
               ),
-              ListOptionsBasicQuestion(listOptions: listOptions)
+              BasicQuestionListOptions(listOptions: listOptions)
             ],
           ),
         ),

@@ -1,24 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/global.dart';
-import 'package:trivia_game/utils/get_letter.dart';
-import 'package:trivia_game/widgets/basic_question/textualOption.dart';
 import 'package:trivia_game/widgets/widgets_questions/continue_page.dart';
-import 'package:trivia_game/widgets/basic_question/option_question_representation.dart';
+import 'package:trivia_game/widgets/basic_question/basic_question_option_intermediare.dart';
+import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
-class ListOptionsBasicQuestion extends StatefulWidget { 
+class BasicQuestionListOptions extends StatefulWidget { 
   final List<OptionQuestionRepresentation> listOptions;
 
-  ListOptionsBasicQuestion({
+  BasicQuestionListOptions({
     required this.listOptions,
   });
 
   @override
-  ListOptionsBasicQuestionState createState() => ListOptionsBasicQuestionState();
+  BasicQuestionListOptionsState createState() => BasicQuestionListOptionsState();
 }
 
-class ListOptionsBasicQuestionState extends State<ListOptionsBasicQuestion> {
+class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
   
-  void _handleClickOption(OptionQuestionRepresentation optionRepresentation) {
+  void handleClickOption(OptionQuestionRepresentation optionRepresentation) {
     OptionQuestionRepresentation updatedOption = OptionQuestionRepresentation(
         option: optionRepresentation.option,
         highlightColor: optionRepresentation.option.correct
@@ -59,12 +58,15 @@ class ListOptionsBasicQuestionState extends State<ListOptionsBasicQuestion> {
             itemBuilder: (context, index) {
               final optionRepresentation = listOptions[index];
               return 
-                TextualOption(
-                  text: "${get_letter(index)}) ${optionRepresentation.option.text}",
-                  color: optionRepresentation.highlightColor ?? OPTION_BACKGROUND_COLOR_DEFAULT,
-                  onPressed: () {
-                    _handleClickOption(optionRepresentation);
-                  },
+                Column(
+                  children: [
+                    const SizedBox(height: 10),
+                    BasicQuestionOptionWrapper(
+                      optionRepresentation: optionRepresentation, 
+                      index: index, 
+                      handleClickOption: handleClickOption
+                    )
+                  ],
                 );
             },   
           ),
