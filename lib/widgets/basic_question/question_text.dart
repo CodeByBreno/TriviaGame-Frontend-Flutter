@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/questions/backgroundQuestionImage.dart';
+import 'package:trivia_game/widgets/widgets_questions/brackground_question_image.dart';
 
+class QuestionText extends StatefulWidget {
+  String text;
 
-class QuestionBanner extends StatelessWidget {
+  QuestionText({
+    super.key,  
+    required this.text 
+  });
+
+  @override
+  QuestionTextState createState() => QuestionTextState();
+}
+
+class QuestionTextState extends State<QuestionText> {
   @override
   Widget build(BuildContext context) {
+    final text = widget.text;
+
     return 
       Container(
         width: 380,
@@ -20,20 +33,14 @@ class QuestionBanner extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.topRight,
-                child: 
-                  BackgroundQuestionImage(),
+                child: BackgroundQuestionImage(),
               ),
-              const Padding(
-                  padding: EdgeInsets.only(
-                    top: 30,
-                    bottom: 10,
-                    left: 30,
-                    right: 30,
-                  ),
+              Padding(
+                  padding: const EdgeInsets.all(30),
                   child: 
                     Text(
-                      "Qual destas árvores é nativa da Caatinga, uma vegetação típica da região do Vale do São Francisco?",
-                      style: TextStyle(
+                      text,
+                      style: const TextStyle(
                         fontSize: 20,
                       ),
                     ),

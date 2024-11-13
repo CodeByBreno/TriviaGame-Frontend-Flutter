@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-class BackgroundHome extends StatelessWidget {
+class DefaultBackgroundImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
