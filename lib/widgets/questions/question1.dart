@@ -15,10 +15,10 @@ class _Question1State extends State<Question1> {
   bool showOptionD = true;
   bool showOptionA = true;
   
+  Color optionAColor = Colors.white;
   Color optionBColor = Colors.white;
   Color optionCColor = Colors.white;
   Color optionDColor = Colors.white;
-  Color optionAColor = Colors.white; // Cor inicial da opção A
 
   void _handleIncorrectOption(VoidCallback hideOption, String option) {
     setState(() {
