@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/config/global.dart';
-import 'package:trivia_game/widgets/widgets_questions/continue_page.dart';
-import 'package:trivia_game/widgets/basic_question/basic_question_option_intermediare.dart';
+import 'package:trivia_game/utils/options_dimensions.dart';
+import 'package:trivia_game/widgets/basic_question/basic_question_option_wrapper.dart';
 import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
 class BasicQuestionListOptions extends StatefulWidget { 
@@ -16,47 +15,34 @@ class BasicQuestionListOptions extends StatefulWidget {
 }
 
 class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
-  
-  void handleClickOption(OptionQuestionRepresentation optionRepresentation) {
-    OptionQuestionRepresentation updatedOption = OptionQuestionRepresentation(
-        option: optionRepresentation.option,
-        highlightColor: optionRepresentation.option.correct
-            ? OPTION_BACKGROUND_COLOR_CORRECT
-            : OPTION_BACKGROUND_COLOR_WRONG,
-        isSelected: true,
-        active: false,
-      );
-
-    setState(() {
-      widget.listOptions[widget.listOptions.indexOf(optionRepresentation)] = updatedOption;
-    });
-
-    if (optionRepresentation.option.correct) {
-      Future.delayed(const Duration(seconds: 1), () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => ContinuePage()),
-        );
-      });
-    } else {
-      Future.delayed(const Duration(seconds: 1), () {
-        setState(() {
-          optionRepresentation.isSelected = false;
-        });
-      });
-    }
-  }
-  
   @override
   Widget build(BuildContext context) {
-    final listOptions = widget.listOptions;
+    final listOptionsRepresentation = widget.listOptions;
+
+    int maxDimension = 0;
+    listOptionsRepresentation.forEach((optionRepresentation) {
+      int dimension; 
+
+      if (optionRepresentation.option.text.length > 30) {
+        dimension = 3;
+      } else if (optionRepresentation.option.text.length > 20) {
+        dimension = 2;
+      } else if (optionRepresentation.option.text.length > 10) {
+        dimension = 1;
+      } else {
+        dimension = 0;
+      }
+      maxDimension = (dimension > maxDimension) ? dimension : maxDimension;
+    });
+
+    String dimensionUsed = getDimension(maxDimension);
     
     return 
       Expanded(
         child: ListView.builder(
-            itemCount: listOptions.length,
+            itemCount: listOptionsRepresentation.length,
             itemBuilder: (context, index) {
-              final optionRepresentation = listOptions[index];
+              final optionRepresentation = listOptionsRepresentation[index];
               return 
                 Column(
                   children: [
@@ -64,7 +50,7 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
                     BasicQuestionOptionWrapper(
                       optionRepresentation: optionRepresentation, 
                       index: index, 
-                      handleClickOption: handleClickOption
+                      dimension: dimensionUsed,
                     )
                   ],
                 );

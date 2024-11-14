@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/widgets_questions/brackground_question_image.dart';
+import 'package:trivia_game/widgets/widgets_questions/background_question_image.dart';
 
 class QuestionText extends StatefulWidget {
   String text;
@@ -40,8 +40,8 @@ class QuestionTextState extends State<QuestionText> {
                   child: 
                     Text(
                       text,
-                      style: const TextStyle(
-                        fontSize: 20,
+                      style: TextStyle(
+                        fontSize: text.length > 120 ? 15 : 20,
                       ),
                     ),
                 )

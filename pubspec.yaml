@@ -22,6 +22,9 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/img/background_vale_sao_francisco.png
+    - assets/img/vale_sao_francisco.png
     - assets/img/Interrogation.png
+    - assets/img/carrancas.png
+    - assets/img/petrolina.png
+    - assets/img/mascot.png
 

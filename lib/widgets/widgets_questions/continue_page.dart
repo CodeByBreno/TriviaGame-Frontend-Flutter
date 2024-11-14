@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/routes.dart';
+import 'package:trivia_game/config/global.dart';
 import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
 
 class ContinuePage extends StatelessWidget {
@@ -50,7 +51,7 @@ class ContinuePage extends StatelessWidget {
                           vertical: 12.0, horizontal: 24.0),
                       child: Text(
                         'Continuar',
-                        style: TextStyle(fontSize: 18),
+                        style: TextStyle(fontSize: 18, color: FONT_PRIMARY_LIGHT_COLOR),
                       ),
                     ),
                   ),

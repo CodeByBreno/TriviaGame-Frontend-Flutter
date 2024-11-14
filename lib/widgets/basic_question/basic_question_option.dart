@@ -4,15 +4,17 @@ class BasicQuestionOption extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final Color color;
-  final double? height;
-  final double? width;
+  final double height;
+  final double width;
+  final double fontSize;
 
   BasicQuestionOption({
     required this.text,
     required this.onPressed,
+    required this.height,
+    required this.width,
+    required this.fontSize,
     this.color = Colors.white, 
-    this.height = 60,
-    this.width = 320,
   });
 
   @override
@@ -26,12 +28,14 @@ class BasicQuestionOption extends StatelessWidget {
           color: color,
           borderRadius: BorderRadius.circular(10),
         ),
-        child: Center(
+        child: Padding(
+          padding: EdgeInsets.only(left: 15, right: 15),
+          child: Center(
           child: Text(
             text,
-            style: const TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: fontSize),
           ),
-        ),
+        ),)
       ),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:trivia_game/models/option_question.dart';
 
-class BasicQuestioModel {
+class BasicQuestionModel {
   final String id_basic_question;
   final String text;
   final String? image_url;
@@ -9,7 +9,7 @@ class BasicQuestioModel {
   final String type;
   final double? time;
 
-  BasicQuestioModel({
+  BasicQuestionModel({
     required this.id_basic_question,
     required this.text,
     required this.QUESTION, 
@@ -29,8 +29,8 @@ class BasicQuestioModel {
       'time': time,
     };
 
-  factory BasicQuestioModel.fromMap(Map<String, dynamic> json) => 
-    BasicQuestioModel(
+  factory BasicQuestionModel.fromMap(Map<String, dynamic> json) => 
+    BasicQuestionModel(
       id_basic_question: json['id_basic_question'] as String, 
       text: json['text'] as String,  
       image_url: json['image_url'] as String?,

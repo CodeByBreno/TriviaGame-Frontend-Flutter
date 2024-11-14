@@ -43,4 +43,4 @@ Map<String, dynamic> jsonTestParsed = {
   'time': 30.0,
 };
 
-BasicQuestioModel testQuestion = BasicQuestioModel.fromMap(jsonTestParsed);
+BasicQuestionModel testQuestion = BasicQuestionModel.fromMap(jsonTestParsed);

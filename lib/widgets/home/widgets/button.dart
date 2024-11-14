@@ -25,16 +25,16 @@ class MainButtonState extends State<MainButton> {
         onPressed: () => {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => BasicQuestion(basicQuestion: testQuestion)),
+            MaterialPageRoute(builder: (context) => BasicQuestion()),
           )
         }, 
         child: 
           Container(
-            width: 250,
-            height: 60,
+            width: 200,
+            height: 50,
             decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(15),
+              color: widget.color,
+              borderRadius: BorderRadius.circular(30),
             ),
             child: 
               Center(
