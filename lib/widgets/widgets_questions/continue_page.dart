@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/routes.dart';
 import 'package:trivia_game/config/global.dart';
-import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
+import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 
 class ContinuePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return DefaultBackground(
+    return DefaultContainer(
       content: 
         Center(
           child: Padding(

@@ -1,38 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/global.dart';
-import 'package:trivia_game/utils/hex_color.dart';
-import 'package:trivia_game/utils/percentage_dimensions.dart';
+import 'package:trivia_game/config/images_project.dart';
+import 'package:trivia_game/widgets/Main/main_page.dart';
 import 'package:trivia_game/widgets/home/widgets/button.dart';
-import 'package:trivia_game/widgets/home/widgets/mascot_icon.dart';
-import 'package:trivia_game/widgets/home/widgets/text_interface_home.dart';
-import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
+import 'package:trivia_game/widgets/home/widgets/background_border_home.dart';
+import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 
 class InterfaceHome extends StatelessWidget {
+  const InterfaceHome({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return DefaultBackground(
+    return DefaultContainer(
       content: 
-        Center(
-          child: 
+        Stack( 
+          children: [
+            const BackgroundBorderHome(),
             Container(
-              alignment: Alignment.center,
-              width: getWidthPercentage(context, 80),
-              height: getHeightPercentage(context, 62),
-              decoration: const BoxDecoration( 
-                color: OPTION_BACKGROUND_COLOR_DEFAULT,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+              padding: DEFAULT_PADDING,
+              height: double.infinity,
+              width: double.infinity,
+              child: Column(
+                children: [
+                  const SizedBox(height: 60),
+                  Image.asset(
+                    ImagesProject.xilogravureHomePagePNG,
+                    height: 360,
+                    fit: BoxFit.fill,
+                  ),
+                  const SizedBox(height: 10),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    child: 
+                      Image.asset(
+                        ImagesProject.quizLogoNordestePNG, 
+                        fit: BoxFit.fitWidth,
+                      ),
+                    ),
+                  MainButton(
+                    color: BUTTON_BACKGROUND_COLOR, 
+                    text: "Começar!",
+                    width: 200,
+                    height: 100,
+                    onPressed: () {
+                      Navigator.push(
+                        context, 
+                        MaterialPageRoute(builder: (context) => MainPage()),
+                      );
+                    }
+                  )
+                ],
               ),
-              child: 
-                Column(
-                  children: [
-                    MascotIcon(),
-                    TextInterfaceHome(),
-                    const SizedBox(height: 15),
-                    MainButton(color: hexColor("#21B7FF"), text: "Começar!"),
-                    const SizedBox(height: 15),
-                  ]
-                ),
             ),
+          ],
         )
     );
   }

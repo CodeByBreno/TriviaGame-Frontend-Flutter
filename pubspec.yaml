@@ -14,6 +14,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.1.2
   http: ^1.2.0
+  flutter_svg: ^2.0.14
 
 dev_dependencies:
   flutter_test:
@@ -22,10 +23,38 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  fonts:
+    - family: JotiOne
+      fonts:
+        - asset: assets/font/JotiOne-Regular.ttf
   assets:
-    - assets/img/vale_sao_francisco.png
-    - assets/img/Interrogation.png
-    - assets/img/carrancas.png
-    - assets/img/petrolina.png
-    - assets/img/mascot.png
+    - assets/img/backgrounds/BackgroundDefault.svg
+    - assets/img/backgrounds/BackgroundDefault.png
+    - assets/img/BiggerBackgroundXilogravure.svg
+    - assets/img/BiggerBackgroundXilogravure.png
+    - assets/img/MediumBorderXilogravure.svg
+    - assets/img/MediumBorderXilogravure.png
+    - assets/img/QuizLogoNordeste.svg
+    - assets/img/QuizLogoNordeste.png
+    - assets/img/XilogravureHomePage.svg
+    - assets/img/XilogravureHomePage.png
+    - assets/img/Carranca.svg
+    - assets/img/Carranca.png
+    - assets/img/Cactus.svg
+    - assets/img/Cactus.png
+    - assets/img/CheckBox.svg
+    - assets/img/CheckBox.png
+    - assets/img/QuestionTextBorder.svg
+    - assets/img/PositiveCheck.svg
+    - assets/img/PositiveCheck.png
+    - assets/img/NegativeCheck.svg
+    - assets/img/NegativeCheck.png
+    - assets/img/backgrounds/BackgroundMainPage.svg
+    - assets/img/backgrounds/BackgroundQuestion1.png
+    - assets/img/backgrounds/BackgroundQuestion2.png
+    - assets/img/backgrounds/BackgroundQuestion3.png
+    - assets/img/backgrounds/BackgroundQuestion4.png
+    - assets/img/backgrounds/BackgroundQuestion5.png
+    - assets/img/backgrounds/ResultPage.png
+
 

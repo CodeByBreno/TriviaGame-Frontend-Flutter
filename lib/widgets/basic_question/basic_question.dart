@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/utils/get_question.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
 import 'package:trivia_game/widgets/basic_question/question_text.dart';
-import 'package:trivia_game/widgets/widgets_questions/background_default.dart';
+import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question_list_options.dart';
 import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
@@ -41,8 +41,7 @@ class BasicQuestionState extends State<BasicQuestion> {
 
     listOptions.shuffle(Random());
 
-  return DefaultBackground(
-      blur: true,
+  return DefaultContainer(
       content:  Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,

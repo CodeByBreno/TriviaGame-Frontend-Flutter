@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:trivia_game/config/images_project.dart';
 
-class DefaultBackgroundImage extends StatelessWidget {
-  const DefaultBackgroundImage({super.key});
+class BackgroundCoverSVG extends StatelessWidget {
+  final String image;
+
+  const BackgroundCoverSVG({
+    super.key, 
+    required this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
     return 
       SvgPicture.asset(
-        ImagesProject.backgroundDefault,
+        image,
         width: double.infinity,
         height: double.infinity,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
       );
   }
 }
