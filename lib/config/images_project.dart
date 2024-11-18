@@ -1,3 +1,5 @@
+import 'dart:math';
+
 class ImagesProject {
   static const String backgroundDefault = "assets/img/backgrounds/BackgroundDefault.svg";
   static const String biggerBackgroundXilogravure = "assets/img/BiggerBackgroundXilogravure.svg";
@@ -23,4 +25,27 @@ class ImagesProject {
   static const String negativeCheckPNG = "assets/img/NegativeCheck.png";
   static const String cactusPNG = "assets/img/Cactus.png";
   static const String tatuPNG = "assets/img/tatu.png";
+
+  
+  static const String backgroundQuestion1PNG = "assets/img/backgrounds/BackgroundQuestion1.png";
+  static const String backgroundQuestion2PNG = "assets/img/backgrounds/BackgroundQuestion2.png";
+  static const String backgroundQuestion3PNG = "assets/img/backgrounds/BackgroundQuestion3.png";
+  static const String backgroundQuestion4PNG = "assets/img/backgrounds/BackgroundQuestion4.png";
+  static const String backgroundQuestion5PNG = "assets/img/backgrounds/BackgroundQuestion5.png";
+  static const String resultPagePNG = "assets/img/backgrounds/ResultPage.png";
+
+   static String getRandomBackground() {
+    List<String> backgrounds = [
+      backgroundQuestion1PNG,
+      backgroundQuestion2PNG,
+      backgroundQuestion3PNG,
+      backgroundQuestion4PNG,
+      backgroundQuestion5PNG,
+    ];
+
+    Random random = Random();
+    int index = random.nextInt(backgrounds.length); 
+
+    return backgrounds[index];
+  }
 }

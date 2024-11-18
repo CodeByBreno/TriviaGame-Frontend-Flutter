@@ -2,6 +2,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:trivia_game/utils/generic_page.dart';
+import 'package:trivia_game/widgets/score/score.dart';
+import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
 import 'package:trivia_game/widgets/generics/return_button.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
@@ -36,7 +38,7 @@ class BasicQuestionState extends State<BasicQuestion> {
     if (challenge.isCompleted()) {
       Navigator.pushReplacement(
         context, 
-        MaterialPageRoute(builder: (context) => GenericPage())
+        MaterialPageRoute(builder: (context) => Score())
       );
     } else if (challenge.canProceedToNextQuestion()) {
       challenge.nextQuestion();
@@ -53,28 +55,39 @@ class BasicQuestionState extends State<BasicQuestion> {
 
   return DefaultContainer(
       content:  
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        Stack(
           children: [
-            ReturnButton(),
-            const SizedBox(height: 10),
-            Row(
-              children: 
-                challenge
-                  .getChallengeResults()
-                  .map((entry) => CheckBoxBasicQuestion(type: entry))
-                  .toList(),
+            Image.asset(
+                ImagesProject.getRandomBackground(),
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.fill
+              ),
+             Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ReturnButton(),
+                const SizedBox(height: 10),
+                Row(
+                  children: 
+                    challenge
+                      .getChallengeResults()
+                      .map((entry) => CheckBoxBasicQuestion(type: entry))
+                      .toList(),
+                ),
+                const SizedBox(height: 15),
+                QuestionText(text: currentQuestion.text),
+                BasicQuestionListOptions(
+                  listOptions: listOptions,
+                  handleCorrectClick: () => handleCorrectClick(context, challenge),
+                  handleIncorrectClick: () => handleIncorrectClick(context, challenge),
+                )
+              ],
             ),
-            const SizedBox(height: 15),
-            QuestionText(text: currentQuestion.text),
-            BasicQuestionListOptions(
-              listOptions: listOptions,
-              handleCorrectClick: () => handleCorrectClick(context, challenge),
-              handleIncorrectClick: () => handleIncorrectClick(context, challenge),
-            )
           ],
-        ),
+        )
+       
     );
   }
 }

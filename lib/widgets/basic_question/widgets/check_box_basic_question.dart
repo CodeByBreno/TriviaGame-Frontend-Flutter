@@ -3,10 +3,12 @@ import 'package:trivia_game/config/images_project.dart';
 
 class CheckBoxBasicQuestion extends StatelessWidget {
   final String type;
+  final double? height;
 
   const CheckBoxBasicQuestion({
     super.key,
     required this.type,
+    this.height,
   });
 
   @override
@@ -25,7 +27,7 @@ class CheckBoxBasicQuestion extends StatelessWidget {
     return 
       Image.asset(
         imagePath,
-        height: 36,
+        height: height ?? 36,
       );
   }
 }

@@ -11,8 +11,6 @@ class BeginButtonMainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final challenge = Provider.of<ChallengeProvider>(context);
 
-    challenge.rebuild(10);
-
     return 
       MainButton(
         text: "Começar partida com 10 perguntas!", 
@@ -20,7 +18,8 @@ class BeginButtonMainPage extends StatelessWidget {
         width: 240,
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
         fontSize: 21,
-        onPressed: () {
+        onPressed: () {    
+          challenge.rebuild(10);
           Navigator.push(
             context, 
             MaterialPageRoute(

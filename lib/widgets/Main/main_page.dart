@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/utils/generic_page.dart';
 import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/widgets/about/about_us.dart';
 import 'package:trivia_game/widgets/Main/Widgets/background_main_page.dart';
