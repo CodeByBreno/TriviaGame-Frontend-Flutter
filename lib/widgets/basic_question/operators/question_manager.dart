@@ -20,4 +20,18 @@ class QuestionManager {
 
     return BasicQuestionModel.fromMap(jsonQuestions[index]);
   }
+
+  List<BasicQuestionModel> getChallenge(int size) {
+    List<BasicQuestionModel> challenge = [];
+
+    if (size > jsonQuestions.length) {
+      throw Exception("Não existem perguntas suficientes para gerar esse desafio!");
+    }
+
+    for (int i = 0; i < size; i++) {
+      challenge.add(getQuestion());
+    }
+
+    return challenge;
+  }
 }

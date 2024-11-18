@@ -29,13 +29,13 @@ double getWidthtForOptionDimension(String dimension) {
 double getFontSizeForOptionDimension(String dimension) {
   switch (dimension) {
     case "big":
-      return 14;
+      return 13;
     case "medium":
-      return 16;
+      return 15;
     case "small":
-      return 18;
+      return 17;
     default:
-      return 18;
+      return 17;
   }
 }
 

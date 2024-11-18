@@ -22,4 +22,5 @@ class ImagesProject {
   static const String positiveCheckPNG = "assets/img/PositiveCheck.png";
   static const String negativeCheckPNG = "assets/img/NegativeCheck.png";
   static const String cactusPNG = "assets/img/Cactus.png";
+  static const String tatuPNG = "assets/img/tatu.png";
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/widgets/widgets_questions/background_question_image.dart';
 
 class QuestionText extends StatefulWidget {
@@ -19,21 +20,17 @@ class QuestionTextState extends State<QuestionText> {
     final text = widget.text;
 
     return 
-      Container(
+      SizedBox(
         width: 380,
         height: 300,
         child:
           Stack(
             children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-              Align(
-                alignment: Alignment.topRight,
-                child: BackgroundQuestionImage(),
+              Image.asset(
+                ImagesProject.biggerBackgroundXilogravurePNG,
+                width: 400,
+                height: 300,
+                fit: BoxFit.fill
               ),
               Padding(
                   padding: const EdgeInsets.all(30),
@@ -41,7 +38,7 @@ class QuestionTextState extends State<QuestionText> {
                     Text(
                       text,
                       style: TextStyle(
-                        fontSize: text.length > 120 ? 15 : 20,
+                        fontSize: text.length > 120 ? 14 : 18,
                       ),
                     ),
                 )

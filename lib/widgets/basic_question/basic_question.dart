@@ -1,16 +1,19 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:trivia_game/utils/get_question.dart';
+import 'package:provider/provider.dart';
+import 'package:trivia_game/utils/generic_page.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
-import 'package:trivia_game/widgets/basic_question/question_text.dart';
+import 'package:trivia_game/widgets/generics/return_button.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
-import 'package:trivia_game/widgets/basic_question/basic_question_list_options.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/question_text.dart';
+import 'package:trivia_game/widgets/basic_question/operators/challenge_provider.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/check_box_basic_question.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/basic_question_list_options.dart';
 import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
-// import 'package:provider/provider.dart';
-// import 'package:trivia_game/basic_question_notifier.dart';
-
 class BasicQuestion extends StatefulWidget {
+  const BasicQuestion({super.key});
+
   @override
   BasicQuestionState createState() => BasicQuestionState();
 }
@@ -18,39 +21,60 @@ class BasicQuestion extends StatefulWidget {
 class BasicQuestionState extends State<BasicQuestion> {
   @override
   Widget build(BuildContext context) {
-    // final notifier = Provider.of<BasicQuestionNotifier>(context);
+  final challenge = Provider.of<ChallengeProvider>(context);
 
-    // WidgetsBinding.instance.addPostFrameCallback((_) {
-    //   if (notifier.question == null && !notifier.isLoading) {
-    //     notifier.fetchData();
-    //   }
-    // });
-
-    // if (notifier.isLoading) {
-    //   return const Center(child: CircularProgressIndicator()); 
-    // }
-
-    // if (notifier.question == null) {
-    //   return const Center(child: Text("Nenhuma pergunta encontrada"));
-    // }
-
-    final BasicQuestionModel question = QuestionManager().getQuestion();
-    final List<OptionQuestionRepresentation> listOptions = question.options
+  final BasicQuestionModel currentQuestion = challenge.getCurrentQuestion();
+  final List<OptionQuestionRepresentation> listOptions = currentQuestion.options
         .map((option) => OptionQuestionRepresentation(option: option))
         .toList();
 
-    listOptions.shuffle(Random());
+  listOptions.shuffle(Random());
+
+  void handleCorrectClick(BuildContext context, ChallengeProvider challenge) {
+    challenge.questionCorrect();
+
+    if (challenge.isCompleted()) {
+      Navigator.pushReplacement(
+        context, 
+        MaterialPageRoute(builder: (context) => GenericPage())
+      );
+    } else if (challenge.canProceedToNextQuestion()) {
+      challenge.nextQuestion();
+      Navigator.pushReplacement(
+        context, 
+        MaterialPageRoute(builder: (context) => BasicQuestion())
+      );
+    }
+  }
+
+  void handleIncorrectClick(BuildContext context, ChallengeProvider challenge) {
+    challenge.questionIncorrect();
+  }
 
   return DefaultContainer(
-      content:  Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: 100),
-              QuestionText(text: question.text),
-              BasicQuestionListOptions(listOptions: listOptions),
-            ],
-          ),
+      content:  
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            ReturnButton(),
+            const SizedBox(height: 10),
+            Row(
+              children: 
+                challenge
+                  .getChallengeResults()
+                  .map((entry) => CheckBoxBasicQuestion(type: entry))
+                  .toList(),
+            ),
+            const SizedBox(height: 15),
+            QuestionText(text: currentQuestion.text),
+            BasicQuestionListOptions(
+              listOptions: listOptions,
+              handleCorrectClick: () => handleCorrectClick(context, challenge),
+              handleIncorrectClick: () => handleIncorrectClick(context, challenge),
+            )
+          ],
+        ),
     );
   }
 }

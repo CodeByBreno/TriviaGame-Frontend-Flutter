@@ -21,22 +21,27 @@ class BasicQuestionOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Container(
-        height: height,
-        width: width,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        child: Padding(
-          padding: EdgeInsets.only(left: 15, right: 15),
-          child: Center(
-          child: Text(
-            text,
-            style: TextStyle(fontSize: fontSize),
+      child: 
+        Container(
+          height: height,
+          width: width,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(
+              color: Colors.black,
+              width: 1
+            )
           ),
-        ),)
-      ),
+          child: Padding(
+            padding: EdgeInsets.only(left: 15, right: 15),
+            child: Center(
+            child: Text(
+              text,
+              style: TextStyle(fontSize: fontSize),
+            ),
+          ),)
+        ),
     );
   }
 }

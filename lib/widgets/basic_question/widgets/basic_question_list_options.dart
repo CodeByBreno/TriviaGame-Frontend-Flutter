@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/utils/get_max_dimension.dart';
 import 'package:trivia_game/utils/options_dimensions.dart';
-import 'package:trivia_game/widgets/basic_question/basic_question_option_wrapper.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/basic_question_option_wrapper.dart';
 import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
 class BasicQuestionListOptions extends StatefulWidget { 
   final List<OptionQuestionRepresentation> listOptions;
+  final VoidCallback handleCorrectClick;
+  final VoidCallback handleIncorrectClick;
 
-  BasicQuestionListOptions({
+  const BasicQuestionListOptions({
+    super.key, 
     required this.listOptions,
+    required this.handleCorrectClick,
+    required this.handleIncorrectClick
   });
 
   @override
@@ -19,22 +25,7 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
   Widget build(BuildContext context) {
     final listOptionsRepresentation = widget.listOptions;
 
-    int maxDimension = 0;
-    listOptionsRepresentation.forEach((optionRepresentation) {
-      int dimension; 
-
-      if (optionRepresentation.option.text.length > 30) {
-        dimension = 3;
-      } else if (optionRepresentation.option.text.length > 20) {
-        dimension = 2;
-      } else if (optionRepresentation.option.text.length > 10) {
-        dimension = 1;
-      } else {
-        dimension = 0;
-      }
-      maxDimension = (dimension > maxDimension) ? dimension : maxDimension;
-    });
-
+    int maxDimension = getMaxDimension(listOptionsRepresentation);
     String dimensionUsed = getDimension(maxDimension);
     
     return 
@@ -46,12 +37,14 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
               return 
                 Column(
                   children: [
-                    const SizedBox(height: 10),
                     BasicQuestionOptionWrapper(
                       optionRepresentation: optionRepresentation, 
                       index: index, 
                       dimension: dimensionUsed,
-                    )
+                      handleCorrectClick: widget.handleCorrectClick,
+                      handleIncorrectClick: widget.handleIncorrectClick,
+                    ),
+                    const SizedBox(height: 10),
                   ],
                 );
             },   

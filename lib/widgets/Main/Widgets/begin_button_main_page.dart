@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/home/widgets/button.dart';
+import 'package:provider/provider.dart';
+import 'package:trivia_game/widgets/generics/button.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question.dart';
+import 'package:trivia_game/widgets/basic_question/operators/challenge_provider.dart';
 
 class BeginButtonMainPage extends StatelessWidget {
   const BeginButtonMainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final challenge = Provider.of<ChallengeProvider>(context);
+
+    challenge.rebuild(10);
+
     return 
       MainButton(
         text: "Começar partida com 10 perguntas!", 
@@ -17,7 +23,9 @@ class BeginButtonMainPage extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context, 
-            MaterialPageRoute(builder: (context) => BasicQuestion())
+            MaterialPageRoute(
+              builder: (context) => BasicQuestion()
+            )
           );
         }
       );

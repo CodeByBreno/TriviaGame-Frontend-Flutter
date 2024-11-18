@@ -27,6 +27,9 @@ flutter:
     - family: JotiOne
       fonts:
         - asset: assets/font/JotiOne-Regular.ttf
+    - family: Itim
+      fonts:
+        - asset: assets/font/Itim-Regular.ttf
   assets:
     - assets/img/backgrounds/BackgroundDefault.svg
     - assets/img/backgrounds/BackgroundDefault.png
@@ -38,6 +41,7 @@ flutter:
     - assets/img/QuizLogoNordeste.png
     - assets/img/XilogravureHomePage.svg
     - assets/img/XilogravureHomePage.png
+    - assets/img/tatu.png
     - assets/img/Carranca.svg
     - assets/img/Carranca.png
     - assets/img/Cactus.svg

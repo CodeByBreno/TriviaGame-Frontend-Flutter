@@ -16,6 +16,7 @@ final FONT_PRIMARY_DARK_COLOR = hexColor("#414141");
 
 // Cores em geral
 final BUTTON_BACKGROUND_COLOR = hexColor("#FFD650");
+final BOX_LIGHTER_COLOR = hexColor("#FFE387");
 
 // Texto da tela inicial
 const TITLE_HOME = "QuizGame: Vale do São Francisco";
