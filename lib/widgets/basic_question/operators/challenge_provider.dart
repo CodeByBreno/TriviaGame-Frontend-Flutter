@@ -81,7 +81,7 @@ class ChallengeProvider with ChangeNotifier {
       throw Exception("Pergunta sem resultado definido");
     }
 
-    if (_currentIndex < _challenge.length - 1) {
+    if (_currentIndex < _challenge.length - 2) {
       _currentIndex++;
     } else {
       _isChallengeCompleted = true;

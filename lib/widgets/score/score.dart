@@ -15,7 +15,6 @@ class Score extends StatelessWidget {
 
     final result = challenge.result();
     final challengeResults = challenge.getChallengeResults();
-    final challengeResultsLength = challengeResults.length;
 
     return 
       DefaultContainer(

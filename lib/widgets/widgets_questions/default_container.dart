@@ -19,9 +19,12 @@ class DefaultContainer extends StatelessWidget {
         child: Stack(
           children: [
             const DefaultBackgroundImage(),
-            Container(
-              padding: padding ?? DEFAULT_PADDING,
-              child: content,
+            Center(
+              child:
+                Container(
+                  padding: padding ?? DEFAULT_PADDING,
+                  child: content,
+                )
             )
           ],
         ),

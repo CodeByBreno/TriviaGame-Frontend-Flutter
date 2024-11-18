@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/widgets/about/about_us.dart';
-import 'package:trivia_game/widgets/Main/Widgets/background_main_page.dart';
-import 'package:trivia_game/widgets/Main/Widgets/minor_button_main_page.dart';
-import 'package:trivia_game/widgets/Main/Widgets/begin_button_main_page.dart';
+import 'package:trivia_game/widgets/main/Widgets/background_main_page.dart';
+import 'package:trivia_game/widgets/main/Widgets/minor_button_main_page.dart';
+import 'package:trivia_game/widgets/main/Widgets/begin_button_main_page.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
-import 'package:trivia_game/widgets/Main/Widgets/random_question_main_page.dart';
+import 'package:trivia_game/widgets/main/Widgets/random_question_main_page.dart';
 
 class MainPage extends StatelessWidget {
   @override
