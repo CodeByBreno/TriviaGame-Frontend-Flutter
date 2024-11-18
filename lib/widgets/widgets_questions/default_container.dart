@@ -20,11 +20,15 @@ class DefaultContainer extends StatelessWidget {
           children: [
             const DefaultBackgroundImage(),
             Center(
-              child:
-                Container(
-                  padding: padding ?? DEFAULT_PADDING,
-                  child: content,
-                )
+              child: 
+                ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 720),
+                  child:
+                    Container(
+                      padding: padding ?? DEFAULT_PADDING,
+                      child: content,
+                    )
+                  ),
             )
           ],
         ),

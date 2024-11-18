@@ -19,9 +19,8 @@ class BackgroundMainPage extends StatelessWidget {
                 fit: BoxFit.fill
               ),
           ),
-          Positioned(
-            top: 480,
-            right: 235,
+          Align(
+            alignment: Alignment.bottomLeft,
             child: 
               Image.asset(
                 ImagesProject.cactusPNG,

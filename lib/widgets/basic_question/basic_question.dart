@@ -70,6 +70,7 @@ class BasicQuestionState extends State<BasicQuestion> {
                 ReturnButton(),
                 const SizedBox(height: 10),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: 
                     challenge
                       .getChallengeResults()
@@ -78,6 +79,7 @@ class BasicQuestionState extends State<BasicQuestion> {
                 ),
                 const SizedBox(height: 15),
                 QuestionText(text: currentQuestion.text),
+                const SizedBox(height: 15),
                 BasicQuestionListOptions(
                   listOptions: listOptions,
                   handleCorrectClick: () => handleCorrectClick(context, challenge),

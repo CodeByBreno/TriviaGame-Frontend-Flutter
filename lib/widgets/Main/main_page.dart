@@ -12,7 +12,7 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return 
       DefaultContainer(
-        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 50),
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
         content: 
           Stack(
             children: [

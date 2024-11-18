@@ -23,7 +23,7 @@ class BeginButtonMainPage extends StatelessWidget {
           Navigator.push(
             context, 
             MaterialPageRoute(
-              builder: (context) => BasicQuestion()
+              builder: (context) => const BasicQuestion()
             )
           );
         }
