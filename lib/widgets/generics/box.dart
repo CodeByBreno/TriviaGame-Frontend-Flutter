@@ -43,7 +43,7 @@ class Box extends StatelessWidget {
             children: [
               Padding(
                 padding: globalPadding ?? EdgeInsets.symmetric(
-                  horizontal: (width ?? 300)/12, 
+                  horizontal: (width ?? 300)/15, 
                   vertical: (height ?? 60)/8),
                 child:
                   Container(

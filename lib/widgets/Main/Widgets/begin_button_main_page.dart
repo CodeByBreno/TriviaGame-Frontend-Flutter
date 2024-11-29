@@ -11,7 +11,7 @@ class BeginButtonMainPage extends StatelessWidget {
     return 
       MainButton(
         text: "Começar partida com 10 perguntas!", 
-        height: 270,
+        height: 280,
         width: 240,
         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
         fontSize: 21,

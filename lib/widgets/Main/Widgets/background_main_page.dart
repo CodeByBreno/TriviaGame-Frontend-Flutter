@@ -9,15 +9,14 @@ class BackgroundMainPage extends StatelessWidget {
     return 
       Stack(
         children: [
-          Positioned(
-            top: 20,
-            left: 275,
-            child: 
+          Align(
+            alignment: Alignment.topRight,
+            child:
               Image.asset(
                 ImagesProject.carrancaPNG,
                 height: 280,
                 fit: BoxFit.fill
-              ),
+              )
           ),
           Align(
             alignment: Alignment.bottomLeft,
@@ -29,6 +28,14 @@ class BackgroundMainPage extends StatelessWidget {
                 fit: BoxFit.fill
               ),
           ),
+          Align(
+            alignment: Alignment.bottomRight,
+            child: 
+              Image.asset(
+                ImagesProject.tatuPNG,
+                height: 120.0,
+              ),
+          )
         ],
       );
   }

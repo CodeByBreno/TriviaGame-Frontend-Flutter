@@ -11,7 +11,7 @@ import 'package:trivia_game/widgets/basic_question/widgets/results_row.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/question_text.dart';
 import 'package:trivia_game/widgets/basic_question/tools/question_manager.dart';
-import 'package:trivia_game/widgets/basic_question/widgets/RandomImageBackground.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/random_image_background.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/basic_question_list_options.dart';
 import 'package:trivia_game/widgets/basic_question/tools/option_question_representation.dart';
 
@@ -43,11 +43,11 @@ class BasicQuestionState extends State<BasicQuestion> {
     listOptions = question.getOptionsRepresentations();
     listOptions.shuffle(Random());
 
-    results = List.filled(10, QuestionManager.PENDING);
-
     currentIndex = 0;
 
     size = widget.challenge.length;
+
+    results = List.filled(size, QuestionManager.PENDING);
 
     _correctAnswerAudio = AudioPlayer();
     _incorrectAnswerAudio = AudioPlayer();

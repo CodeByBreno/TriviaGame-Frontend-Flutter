@@ -11,9 +11,9 @@ class RandomQuestionMainPage extends StatelessWidget {
     return 
       MainButton(
         text: "Treinar com uma pergunta aleatória", 
-        height: 120,
+        height: 150,
         width: 400,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         fontSize: 21,
         onPressed: () {
           Navigator.push(

@@ -16,8 +16,8 @@ class MinorButtonMainPage extends StatelessWidget {
     return 
       MainButton(
         color: color,
-        width: 200,
-        height: 70,
+        width: 220,
+        height: 80,
         text: "Sobre o App", 
         fontSize: 18,
         onPressed: () {

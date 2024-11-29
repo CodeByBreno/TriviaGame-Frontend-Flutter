@@ -38,6 +38,17 @@ class Score extends StatelessWidget {
   Widget build(BuildContext context) {
     final pontuation = getChallengeResult();
 
+    List<List<String>> splitList(List<String> list, int size) {
+      List<List<String>> chunks = [];
+      for (var i = 0; i < list.length; i += size) {
+        int end = (i + size < list.length) ? i + size : list.length;
+        chunks.add(list.sublist(i, end));
+      }
+      return chunks;
+    }
+
+    final resultRows = splitList(results, 5);
+
     return 
       DefaultContainer(
         padding: const EdgeInsets.all(0),
@@ -68,20 +79,17 @@ class Score extends StatelessWidget {
                     width: 340,
                   ),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                  Column(
                     children: 
-                      results
-                        .map((entry) => CheckBoxBasicQuestion(type: entry, height: 60))
-                        .toList().sublist(0, 5),
-                  ),
-                  const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: 
-                      results
-                        .map((entry) => CheckBoxBasicQuestion(type: entry, height: 60))
-                        .toList().sublist(5, 10),
+                      resultRows.map(
+                        (row) => 
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: row
+                                .map((entry) => CheckBoxBasicQuestion(type: entry, height: 60))
+                                .toList()
+                          ),
+                      ).toList(),
                   ),
                   const SizedBox(height: 80),
                   MainButton(
