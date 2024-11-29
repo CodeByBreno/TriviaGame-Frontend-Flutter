@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/images_project.dart';
-import 'package:trivia_game/widgets/widgets_questions/background_question_image.dart';
 
 class QuestionText extends StatefulWidget {
   String text;

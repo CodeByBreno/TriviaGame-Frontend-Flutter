@@ -67,7 +67,7 @@ class AboutUs extends StatelessWidget {
             ),
             const SizedBox(height: 30),
             const Text(
-              "Versão 1.0.0",
+              "Versão $APP_VERSION",
               style: TextStyle(
                 fontFamily: "JotiOne",
                 fontSize: 22

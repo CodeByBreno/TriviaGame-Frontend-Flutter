@@ -1,4 +1,5 @@
 import 'package:trivia_game/models/option_question.dart';
+import 'package:trivia_game/widgets/basic_question/tools/option_question_representation.dart';
 
 class BasicQuestionModel {
   final String id_basic_question;
@@ -41,4 +42,11 @@ class BasicQuestionModel {
       type: json['type'] as String, 
       time: (json['time'] as num?)?.toDouble(),
       );
+
+    
+  List<OptionQuestionRepresentation> getOptionsRepresentations() {
+    return options
+        .map((option) => OptionQuestionRepresentation(option: option))
+        .toList();
+  }
 }

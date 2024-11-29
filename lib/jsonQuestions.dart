@@ -1,4 +1,4 @@
-List<Map<String, dynamic>> listQuestions = [
+List<Map<String, dynamic>> LIST_QUESTIONS = [
   {
   "id_basic_question": "87245248",
   "text": "Qual destas frutas é amplamente cultivada na região do Vale do São Francisco, famosa por sua produção agrícola?",

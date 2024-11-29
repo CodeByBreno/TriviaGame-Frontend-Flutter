@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:trivia_game/widgets/basic_question/tools/option_question_representation.dart';
 
 double getHeightForOptionDimension(String dimension) {
   switch (dimension) {
@@ -50,4 +50,26 @@ String getDimension(int dimension) {
     default:
       return "small";
   }
+}
+
+String getMaxDimension(List<OptionQuestionRepresentation> listOptionsRepresentation) {
+  int dimension = 0; 
+  int maxDimension = 0;
+
+  for (var optionRepresentation in listOptionsRepresentation) {
+    if (optionRepresentation.option.text.length > 30) {
+      dimension = 3;
+    } else if (optionRepresentation.option.text.length > 20) {
+      dimension = 2;
+    } else if (optionRepresentation.option.text.length > 10) {
+      dimension = 1;
+    } else {
+      dimension = 0;
+    }
+    maxDimension = (dimension > maxDimension) ? dimension : maxDimension;
+  }
+
+  String dimensionString = getDimension(maxDimension);
+
+  return dimensionString;
 }

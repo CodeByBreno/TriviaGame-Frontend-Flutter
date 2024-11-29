@@ -1,12 +1,15 @@
 import 'dart:math';
 import 'package:trivia_game/jsonQuestions.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
-
 class QuestionManager {
-  List<Map<String, dynamic>> jsonQuestions = listQuestions; 
-  List<int> usedIndexes = []; 
+  static String CORRECT = "correct";
+  static String INCORRECT = "incorrect";
+  static String PENDING = "pending";
 
-  BasicQuestionModel getQuestion() {
+  static List<Map<String, dynamic>> jsonQuestions = LIST_QUESTIONS; 
+  static List<int> usedIndexes = []; 
+
+  static BasicQuestionModel getQuestion() {
     if (usedIndexes.length == jsonQuestions.length) {
       usedIndexes.clear();
     }
@@ -21,7 +24,7 @@ class QuestionManager {
     return BasicQuestionModel.fromMap(jsonQuestions[index]);
   }
 
-  List<BasicQuestionModel> getChallenge(int size) {
+  static List<BasicQuestionModel> getChallenge(int size) {
     List<BasicQuestionModel> challenge = [];
 
     if (size > jsonQuestions.length) {

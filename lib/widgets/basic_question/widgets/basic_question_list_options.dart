@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/utils/get_max_dimension.dart';
 import 'package:trivia_game/utils/options_dimensions.dart';
+import 'package:trivia_game/widgets/basic_question/tools/option_question_representation.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/basic_question_option_wrapper.dart';
-import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
 
 class BasicQuestionListOptions extends StatefulWidget { 
   final List<OptionQuestionRepresentation> listOptions;
-  final VoidCallback handleCorrectClick;
-  final VoidCallback handleIncorrectClick;
+  final Future<void> Function(OptionQuestionRepresentation) handleClick;
 
   const BasicQuestionListOptions({
     super.key, 
     required this.listOptions,
-    required this.handleCorrectClick,
-    required this.handleIncorrectClick
+    required this.handleClick
   });
 
   @override
@@ -24,9 +21,6 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
   @override
   Widget build(BuildContext context) {
     final listOptionsRepresentation = widget.listOptions;
-
-    int maxDimension = getMaxDimension(listOptionsRepresentation);
-    String dimensionUsed = getDimension(maxDimension);
     
     return 
       Expanded(
@@ -40,9 +34,8 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
                     BasicQuestionOptionWrapper(
                       optionRepresentation: optionRepresentation, 
                       index: index, 
-                      dimension: dimensionUsed,
-                      handleCorrectClick: widget.handleCorrectClick,
-                      handleIncorrectClick: widget.handleIncorrectClick,
+                      dimension: getMaxDimension(listOptionsRepresentation),
+                      handleClick: widget.handleClick,
                     ),
                     const SizedBox(height: 10),
                   ],

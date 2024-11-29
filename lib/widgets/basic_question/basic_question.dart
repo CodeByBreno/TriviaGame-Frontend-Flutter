@@ -1,96 +1,143 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:trivia_game/utils/generic_page.dart';
+import 'package:trivia_game/utils/sounds.dart';
+import 'package:audioplayers/audioplayers.dart';
+import 'package:trivia_game/config/global.dart';
 import 'package:trivia_game/widgets/score/score.dart';
-import 'package:trivia_game/config/images_project.dart';
+import 'package:trivia_game/config/audios_project.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
 import 'package:trivia_game/widgets/generics/return_button.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/results_row.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/question_text.dart';
-import 'package:trivia_game/widgets/basic_question/operators/challenge_provider.dart';
-import 'package:trivia_game/widgets/basic_question/widgets/check_box_basic_question.dart';
+import 'package:trivia_game/widgets/basic_question/tools/question_manager.dart';
+import 'package:trivia_game/widgets/basic_question/widgets/RandomImageBackground.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/basic_question_list_options.dart';
-import 'package:trivia_game/widgets/basic_question/representations/option_question_representation.dart';
+import 'package:trivia_game/widgets/basic_question/tools/option_question_representation.dart';
 
 class BasicQuestion extends StatefulWidget {
-  const BasicQuestion({super.key});
+  final List<BasicQuestionModel> challenge;
+
+  BasicQuestion({
+    super.key,
+    required this.challenge
+  });
 
   @override
   BasicQuestionState createState() => BasicQuestionState();
 }
-
 class BasicQuestionState extends State<BasicQuestion> {
+  late BasicQuestionModel question;
+  late List<OptionQuestionRepresentation> listOptions;
+  late List<String> results = [];
+  late int currentIndex;
+  late int size = 0;
+
+  late AudioPlayer _correctAnswerAudio;
+  late AudioPlayer _incorrectAnswerAudio;
+
   @override
-  Widget build(BuildContext context) {
-  final challenge = Provider.of<ChallengeProvider>(context);
+  void initState() {
+    question = widget.challenge[0];
 
-  final BasicQuestionModel currentQuestion = challenge.getCurrentQuestion();
-  final List<OptionQuestionRepresentation> listOptions = currentQuestion.options
-        .map((option) => OptionQuestionRepresentation(option: option))
-        .toList();
+    listOptions = question.getOptionsRepresentations();
+    listOptions.shuffle(Random());
 
-  listOptions.shuffle(Random());
+    results = List.filled(10, QuestionManager.PENDING);
 
-  void handleCorrectClick(BuildContext context, ChallengeProvider challenge) {
-    challenge.questionCorrect();
+    currentIndex = 0;
 
-    if (challenge.isCompleted()) {
-      Navigator.pushReplacement(
-        context, 
-        MaterialPageRoute(builder: (context) => Score())
-      );
-    } else if (challenge.canProceedToNextQuestion()) {
-      challenge.nextQuestion();
-      Navigator.pushReplacement(
-        context, 
-        MaterialPageRoute(builder: (context) => BasicQuestion())
-      );
+    size = widget.challenge.length;
+
+    _correctAnswerAudio = AudioPlayer();
+    _incorrectAnswerAudio = AudioPlayer();
+    _correctAnswerAudio.setSource(AssetSource(AudiosProject.correctAnswerSound));
+    _incorrectAnswerAudio.setSource(AssetSource(AudiosProject.incorrectAnswerSound));
+    
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _correctAnswerAudio.dispose();
+    _incorrectAnswerAudio.dispose();
+    super.dispose();
+  }
+  
+  void endChallenge() {
+    Navigator.pushAndRemoveUntil(
+      context, 
+      MaterialPageRoute(builder: (context) => Score(results: results)), 
+      (Route<dynamic> route) => false
+    );
+  }
+
+  Future<void> handleClick(OptionQuestionRepresentation optionRep) async {
+    if (optionRep.option.correct) {
+      await playAudio(_correctAnswerAudio, AudiosProject.correctAnswerSound);
+
+      setState(() {
+        optionRep.highlightColor = OPTION_BACKGROUND_COLOR_CORRECT;
+      });
+
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      setState(() {
+        if (results[currentIndex] == QuestionManager.PENDING) {
+          results[currentIndex] = QuestionManager.CORRECT;
+        }
+      });
+
+      if (currentIndex >= size - 1) {
+        endChallenge();
+      } else {
+        setState(() {
+          currentIndex += 1;
+          question = widget.challenge[currentIndex];
+          listOptions = question.getOptionsRepresentations();
+          listOptions.shuffle(Random());
+        });
+      }
+    } else {
+      await playAudio(_incorrectAnswerAudio, AudiosProject.incorrectAnswerSound);
+
+      setState(() {
+        results[currentIndex] = QuestionManager.INCORRECT;
+        optionRep.highlightColor = OPTION_BACKGROUND_COLOR_WRONG;
+      });
+
+      await Future.delayed(const Duration(milliseconds: 300));
+
+      setState(() {
+        optionRep.highlightColor = OPTION_BACKGROUND_COLOR_DISABLED;
+      });
     }
   }
 
-  void handleIncorrectClick(BuildContext context, ChallengeProvider challenge) {
-    challenge.questionIncorrect();
-  }
-
-  return DefaultContainer(
-      content:  
-        Stack(
-          children: [
-            Image.asset(
-                ImagesProject.getRandomBackground(),
-                width: double.infinity,
-                height: double.infinity,
-                fit: BoxFit.fill
+  @override
+  Widget build(BuildContext context) {
+    return DefaultContainer(
+      content: Stack(
+        children: [
+          const RandomImagebackground(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              ReturnButton(),
+              const SizedBox(height: 10),
+              ResultsRow(challengeResults: results),
+              const SizedBox(height: 15),
+              QuestionText(text: question.text),
+              const SizedBox(height: 15),
+              BasicQuestionListOptions(
+                listOptions: listOptions,
+                handleClick: handleClick,
               ),
-             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ReturnButton(),
-                const SizedBox(height: 10),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: 
-                    challenge
-                      .getChallengeResults()
-                      .map((entry) => CheckBoxBasicQuestion(type: entry))
-                      .toList(),
-                ),
-                const SizedBox(height: 15),
-                QuestionText(text: currentQuestion.text),
-                const SizedBox(height: 15),
-                BasicQuestionListOptions(
-                  listOptions: listOptions,
-                  handleCorrectClick: () => handleCorrectClick(context, challenge),
-                  handleIncorrectClick: () => handleIncorrectClick(context, challenge),
-                )
-              ],
-            ),
-          ],
-        )
-       
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
-

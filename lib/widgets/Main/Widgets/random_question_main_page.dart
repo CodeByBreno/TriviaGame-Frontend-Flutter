@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/widgets/generics/button.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question.dart';
+import 'package:trivia_game/widgets/basic_question/tools/question_manager.dart';
 
 class RandomQuestionMainPage extends StatelessWidget {
   const RandomQuestionMainPage({super.key});
@@ -17,7 +18,7 @@ class RandomQuestionMainPage extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context, 
-            MaterialPageRoute(builder: (context) => BasicQuestion())
+            MaterialPageRoute(builder: (context) => BasicQuestion(challenge: QuestionManager.getChallenge(1)))
           );
         }
       );

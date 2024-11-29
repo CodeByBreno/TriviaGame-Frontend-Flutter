@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/utils/hex_color.dart';
 
+// Version
+const APP_VERSION = "2.1.0";
+
 // Server 
 const API_URL = "http://localhost:3000";
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/widgets/main/main_page.dart';
 import 'package:trivia_game/widgets/generics/button.dart';
 
 class ReturnButton extends StatelessWidget {
@@ -20,8 +21,13 @@ class ReturnButton extends StatelessWidget {
             width: 100,
             fontSize: 20,
             onPressed: () {
-              Navigator.pop(context);
-            }),
+              Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => MainPage()), 
+                (Route<dynamic> route) => false,
+              );
+            },
+          )
       );
   }
 }

@@ -34,7 +34,7 @@ class BasicQuestionOption extends StatelessWidget {
             )
           ),
           child: Padding(
-            padding: EdgeInsets.only(left: 15, right: 15),
+            padding: const EdgeInsets.only(left: 15, right: 15),
             child: Center(
             child: Text(
               text,
