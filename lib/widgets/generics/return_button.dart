@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/main/main_page.dart';
 import 'package:trivia_game/widgets/generics/button.dart';
+import 'package:trivia_game/widgets/main_page/main_page.dart';
 
 class ReturnButton extends StatelessWidget {
   final String? text;
