@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/widgets/about/about_us.dart';
 import 'package:trivia_game/utils/percentage_dimensions.dart';
+import 'package:trivia_game/widgets/menu/widgets/background_main_page.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
-import 'package:trivia_game/widgets/main_page/widgets/background_main_page.dart';
-import 'package:trivia_game/widgets/main_page/widgets/minor_button_main_page.dart';
-import 'package:trivia_game/widgets/main_page/widgets/begin_button_main_page.dart';
-import 'package:trivia_game/widgets/main_page/widgets/random_question_main_page.dart';
+import 'package:trivia_game/widgets/menu/widgets/minor_button_main_page.dart';
+import 'package:trivia_game/widgets/menu/widgets/begin_button_main_page.dart';
+import 'package:trivia_game/widgets/menu/widgets/random_question_main_page.dart';
 
-class MainPage extends StatelessWidget {
+class Menu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
