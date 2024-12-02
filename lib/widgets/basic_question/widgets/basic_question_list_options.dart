@@ -23,25 +23,23 @@ class BasicQuestionListOptionsState extends State<BasicQuestionListOptions> {
     final listOptionsRepresentation = widget.listOptions;
     
     return 
-      Expanded(
-        child: ListView.builder(
-            itemCount: listOptionsRepresentation.length,
-            itemBuilder: (context, index) {
-              final optionRepresentation = listOptionsRepresentation[index];
-              return 
-                Column(
-                  children: [
-                    BasicQuestionOptionWrapper(
-                      optionRepresentation: optionRepresentation, 
-                      index: index, 
-                      dimension: getMaxDimension(listOptionsRepresentation),
-                      handleClick: widget.handleClick,
-                    ),
-                    const SizedBox(height: 10),
-                  ],
-                );
-            },   
-          ),
+      Column(
+        children: listOptionsRepresentation.asMap().entries.map((entry) {
+          final index = entry.key;
+          final optionRepresentation = entry.value;
+
+          return Column(
+            children: [
+              BasicQuestionOptionWrapper(
+                optionRepresentation: optionRepresentation,
+                index: index,
+                dimension: getMaxDimension(listOptionsRepresentation),
+                handleClick: widget.handleClick,
+              ),
+              const SizedBox(height: 10),
+            ],
+          );
+        }).toList(),
       );
   }
 }

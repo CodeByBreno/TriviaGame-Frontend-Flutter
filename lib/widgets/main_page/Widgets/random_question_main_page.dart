@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/generics/button.dart';
+import 'package:trivia_game/widgets/components/button.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question.dart';
 import 'package:trivia_game/widgets/basic_question/tools/question_manager.dart';
 

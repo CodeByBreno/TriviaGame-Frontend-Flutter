@@ -1,3 +1,5 @@
+import 'package:trivia_game/config/debug_images.dart';
+
 List<Map<String, dynamic>> LIST_QUESTIONS = [
   {
   "id_basic_question": "87245248",
@@ -922,5 +924,521 @@ List<Map<String, dynamic>> LIST_QUESTIONS = [
   ],
   "type": "basic",
   "time": 45.0
-  }
+  },
+  {
+  "id_basic_question": "51",
+  "text": "O Velho Chico, como é conhecido o rio São Francisco, é essencial para a fauna e flora da Caatinga, fornecendo água vital para muitas espécies da região.",
+  "image_url": null,
+  "QUESTION": "51",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "51"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "51"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "52",
+  "text": "A vegetação da Caatinga é adaptada ao clima semiárido e inclui espécies como o umbuzeiro, que armazena água em suas raízes.",
+  "image_url": null,
+  "QUESTION": "52",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "52"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "52"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "53",
+  "text": "A fauna da Caatinga inclui animais como o lobo-guará, que é amplamente encontrado na região do sertão nordestino.",
+  "image_url": null,
+  "QUESTION": "53",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "53"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "53"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "54",
+  "text": "A Caatinga é o único bioma exclusivamente brasileiro e é caracterizada por longos períodos de seca e chuvas irregulares.",
+  "image_url": null,
+  "QUESTION": "54",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "54"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "54"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "55",
+  "text": "A introdução de espécies exóticas, como o javali, tem impactado negativamente a fauna nativa da Caatinga.",
+  "image_url": null,
+  "QUESTION": "55",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "55"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "55"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "55",
+  "text": "A introdução de espécies exóticas, como o javali, tem impactado negativamente a fauna nativa da Caatinga.",
+  "image_url": null,
+  "QUESTION": "55",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "55"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "55"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "57",
+  "text": "A vegetação da Caatinga é composta majoritariamente por plantas de folhas largas e de rápido crescimento, adaptadas ao clima úmido.",
+  "image_url": null,
+  "QUESTION": "57",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "57"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "57"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "58",
+  "text": "A Caatinga tem grande importância para a agricultura do Nordeste, fornecendo solo fértil e abundante água para plantações.",
+  "image_url": null,
+  "QUESTION": "58",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "58"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "58"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "59",
+  "text": "A ararinha-azul, espécie nativa da Caatinga, foi considerada extinta na natureza devido à perda de habitat e caça ilegal.",
+  "image_url": null,
+  "QUESTION": "59",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "59"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "59"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "60",
+  "text": "O bioma Caatinga ocupa mais de 50% do território nordestino e é conhecido por sua biodiversidade única.",
+  "image_url": null,
+  "QUESTION": "60",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "60"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "60"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "61",
+  "text": "O bioma Caatinga é classificado como uma floresta tropical, com chuvas abundantes durante todo o ano.",
+  "image_url": null,
+  "QUESTION": "61",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "61"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "61"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "62",
+  "text": "O desmatamento da Caatinga pode aumentar o risco de desertificação, agravando as condições de seca na região.",
+  "image_url": null,
+  "QUESTION": "62",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "62"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "62"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "63",
+  "text": "A palma forrageira é uma planta resistente da Caatinga, usada na alimentação do gado durante as secas.",
+  "image_url": null,
+  "QUESTION": "63",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "63"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "63"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "64",
+  "text": "A biodiversidade da Caatinga é baixa, com poucas espécies de plantas e animais adaptadas ao clima semiárido.",
+  "image_url": null,
+  "QUESTION": "64",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "64"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "64"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "65",
+  "text": "O rio São Francisco atravessa a Caatinga, sendo um dos principais responsáveis por irrigar plantações e manter a vida selvagem na região.",
+  "image_url": null,
+  "QUESTION": "65",
+  "options": [
+    {
+      "id_option_question": "opt1",
+      "text": "Verdadeiro",
+      "correct": true,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "65"
+    },
+    {
+      "id_option_question": "opt2",
+      "text": "Falso",
+      "correct": false,
+      "type": "truth_or_false",
+      "equivalent_option_id": null,
+      "question_id": "65"
+    }
+  ],
+  "type": "truth_or_false",
+  "time": 30.0
+  },
+  {
+  "id_basic_question": "66",
+  "text": "Qual o nome do pássaro abaixo, típico da região da caatinga?",
+  "image_url": DebugImages.asa_branca,
+  "QUESTION": "66",
+  "options": [
+    {"id_option_question": "opt1", "text": "Asa Branca", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Pardal", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "João-de-barro", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Sabiá Laranjeira", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "67",
+  "text": "Qual o nome do pássaro abaixo, típico da região da caatinga?",
+  "image_url": DebugImages.azulao,
+  "QUESTION": "67",
+  "options": [
+    {"id_option_question": "opt1", "text": "Azulão", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Sabiá Laranjeira", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Perdiz", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "João-de-barro", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "68",
+  "text": "Qual o nome do pássaro abaixo, típico da região da caatinga?",
+  "image_url": DebugImages.carcara,
+  "QUESTION": "68",
+  "options": [
+    {"id_option_question": "opt1", "text": "Gavião", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Carcará", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Perdiz", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Tangará", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "69",
+  "text": "Qual o nome do animal abaixo, típico da região da caatinga?",
+  "image_url": DebugImages.cachorro_do_mato,
+  "QUESTION": "69",
+  "options": [
+    {"id_option_question": "opt1", "text": "Cachorro do mato", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Lobo-guará", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Raposa-do-campo", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Lobo Cinzento", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "70",
+  "text": "Qual o nome do animal abaixo, típico da região da caatinga?",
+  "image_url": DebugImages.calago_cauda_verde,
+  "QUESTION": "70",
+  "options": [
+    {"id_option_question": "opt1", "text": "Teiú", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Calango da Cauda Verde", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Íngua", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Iguana", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "71",
+  "text": "A qual cidade pertence a bandeira abaixo?",
+  "image_url": DebugImages.petrolina_bandeira,
+  "QUESTION": "71",
+  "options": [
+    {"id_option_question": "opt1", "text": "Petrolina", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Arco Verde", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Casa Nova", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Juazeiro", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "72",
+  "text": "A qual cidade pertence a bandeira abaixo?",
+  "image_url": DebugImages.salgueiro_bandeira,
+  "QUESTION": "72",
+  "options": [
+    {"id_option_question": "opt1", "text": "Salgueiro", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Sobradinho", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Casa Nova", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Bonfim", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "73",
+  "text": "A qual cidade pertence a bandeira abaixo?",
+  "image_url": DebugImages.serra_talhada_bandeira,
+  "QUESTION": "73",
+  "options": [
+    {"id_option_question": "opt1", "text": "Serra Talhada", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Juazeiro", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Patos", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Fortaleza", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
+  {
+  "id_basic_question": "73",
+  "text": "A qual estado brasileiro pertence a bandeira abaixo?",
+  "image_url": DebugImages.pernambuco_bandeira,
+  "QUESTION": "73",
+  "options": [
+    {"id_option_question": "opt1", "text": "Pernambuco", "correct": true, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt2", "text": "Bahia", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt3", "text": "Piauí", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"},
+    {"id_option_question": "opt4", "text": "Alagoas", "correct": false, "type": "basic", "equivalent_option_id": null, "question_id": "50"}
+  ],
+  "type": "basic",
+  "time": 45.0
+  },
 ];

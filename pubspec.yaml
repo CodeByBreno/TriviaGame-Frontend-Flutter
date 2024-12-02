@@ -64,5 +64,14 @@ flutter:
     - assets/audios/correct_answer.mp3
     - assets/audios/incorrect_answer.mp3
     - assets/audios/home_page.mp3
+    - assets/img/questions/asa-branca.png
+    - assets/img/questions/azulao.png
+    - assets/img/questions/carcara.png
+    - assets/img/questions/cachorro-do-mato.png
+    - assets/img/questions/calango-cauda-verde.png
+    - assets/img/questions/pernambuco_flag.png
+    - assets/img/questions/petrolina.png
+    - assets/img/questions/salgueiro.png
+    - assets/img/questions/serra_talhada.png
 
 

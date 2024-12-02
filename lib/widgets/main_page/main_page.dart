@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/widgets/about/about_us.dart';
 import 'package:trivia_game/utils/percentage_dimensions.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
-import 'package:trivia_game/widgets/main_page/Widgets/background_main_page.dart';
-import 'package:trivia_game/widgets/main_page/Widgets/minor_button_main_page.dart';
-import 'package:trivia_game/widgets/main_page/Widgets/begin_button_main_page.dart';
-import 'package:trivia_game/widgets/main_page/Widgets/random_question_main_page.dart';
+import 'package:trivia_game/widgets/main_page/widgets/background_main_page.dart';
+import 'package:trivia_game/widgets/main_page/widgets/minor_button_main_page.dart';
+import 'package:trivia_game/widgets/main_page/widgets/begin_button_main_page.dart';
+import 'package:trivia_game/widgets/main_page/widgets/random_question_main_page.dart';
 
 class MainPage extends StatelessWidget {
   @override
@@ -21,42 +21,35 @@ class MainPage extends StatelessWidget {
             vertical: height * 0.05
           ),
           content: 
-            ConstrainedBox(
-              constraints: 
-                const BoxConstraints(
-                  maxWidth: 400
-                ),
+            SizedBox(
               child: 
-                SizedBox(
-                  child: 
-                    Stack(
-                      children: [
-                        const BackgroundMainPage(),
-                        const Align(
-                          alignment: Alignment.topLeft,
-                          child: 
-                            BeginButtonMainPage(),
-                        ),
-                        const Align(
-                          alignment: Alignment.center,
-                          child: 
-                            RandomQuestionMainPage(),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child:
-                            Column(
-                              children: [
-                                const Expanded(child: SizedBox()),
-                                const MinorButtonMainPage(targetPage: AboutUs()),
-                                SizedBox(height: getHeightPercentage(context, 22))
-                              ],
-                            ),
-                        )
-                      ],
+                Stack(
+                  children: [
+                    const BackgroundMainPage(),
+                    const Align(
+                      alignment: Alignment.topLeft,
+                      child: 
+                        BeginButtonMainPage(),
                     ),
+                    const Align(
+                      alignment: Alignment.center,
+                      child: 
+                        RandomQuestionMainPage(),
+                    ),
+                    Align(
+                      alignment: Alignment.bottomRight,
+                      child:
+                        Column(
+                          children: [
+                            const Expanded(child: SizedBox()),
+                            const MinorButtonMainPage(targetPage: AboutUs()),
+                            SizedBox(height: getHeightPercentage(context, 22))
+                          ],
+                        ),
+                    )
+                  ],
                 ),
-            )
+            ),
         );
       },
     );

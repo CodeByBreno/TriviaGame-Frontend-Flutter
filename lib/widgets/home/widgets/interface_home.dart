@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/global.dart';
 import 'package:trivia_game/config/images_project.dart';
-import 'package:trivia_game/widgets/generics/button.dart';
+import 'package:trivia_game/widgets/components/button.dart';
 import 'package:trivia_game/widgets/main_page/main_page.dart';
 import 'package:trivia_game/widgets/home/widgets/background_border_home.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';

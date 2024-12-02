@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/generics/button.dart';
+import 'package:trivia_game/widgets/components/button.dart';
 
 class MinorButtonMainPage extends StatelessWidget {
   final Widget targetPage;

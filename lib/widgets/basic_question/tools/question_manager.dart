@@ -1,5 +1,5 @@
 import 'dart:math';
-import 'package:trivia_game/jsonQuestions.dart';
+import 'package:trivia_game/config/debug_questions.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
 class QuestionManager {
   static String CORRECT = "correct";

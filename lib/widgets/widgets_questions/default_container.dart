@@ -15,24 +15,26 @@ class DefaultContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SizedBox.expand(
-        child: Stack(
-          children: [
-            const DefaultBackgroundImage(),
-            Center(
-              child: 
-                ConstrainedBox(
-                  constraints: const BoxConstraints(maxWidth: 720),
-                  child:
-                    Container(
-                      padding: padding ?? DEFAULT_PADDING,
-                      child: content,
+      body: 
+        Center(
+          child: 
+            ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 440),
+              child:
+                Stack(
+                  children: [
+                    const DefaultBackgroundImage(),
+                    Center(
+                      child: 
+                      Container(
+                        padding: padding ?? DEFAULT_PADDING,
+                        child: content,
+                      )
                     )
-                  ),
-            )
-          ],
-        ),
-      ),
-    );
+                  ],
+                ),
+            ), 
+        )
+      );
   }
 }

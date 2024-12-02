@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/generics/box.dart';
+import 'package:trivia_game/widgets/components/box.dart';
 
 class MainButton extends StatefulWidget {
   final Color? color;

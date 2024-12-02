@@ -1,12 +1,12 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:trivia_game/utils/sounds.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:trivia_game/config/global.dart';
 import 'package:trivia_game/widgets/score/score.dart';
+import 'package:trivia_game/utils/shuffle_options.dart';
 import 'package:trivia_game/config/audios_project.dart';
 import 'package:trivia_game/models/basic_question_model.dart';
-import 'package:trivia_game/widgets/generics/return_button.dart';
+import 'package:trivia_game/widgets/components/return_button.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/results_row.dart';
 import 'package:trivia_game/widgets/widgets_questions/default_container.dart';
 import 'package:trivia_game/widgets/basic_question/widgets/question_text.dart';
@@ -41,7 +41,7 @@ class BasicQuestionState extends State<BasicQuestion> {
     question = widget.challenge[0];
 
     listOptions = question.getOptionsRepresentations();
-    listOptions.shuffle(Random());
+    listOptions = shuffleOptions(listOptions, question.type);
 
     currentIndex = 0;
 
@@ -95,7 +95,7 @@ class BasicQuestionState extends State<BasicQuestion> {
           currentIndex += 1;
           question = widget.challenge[currentIndex];
           listOptions = question.getOptionsRepresentations();
-          listOptions.shuffle(Random());
+          listOptions = shuffleOptions(listOptions, question.type);
         });
       }
     } else {
@@ -117,24 +117,27 @@ class BasicQuestionState extends State<BasicQuestion> {
   @override
   Widget build(BuildContext context) {
     return DefaultContainer(
-      content: Stack(
+      content: 
+       Stack(
         children: [
           const RandomImagebackground(),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              ReturnButton(),
-              const SizedBox(height: 10),
-              ResultsRow(challengeResults: results),
-              const SizedBox(height: 15),
-              QuestionText(text: question.text),
-              const SizedBox(height: 15),
-              BasicQuestionListOptions(
-                listOptions: listOptions,
-                handleClick: handleClick,
-              ),
-            ],
+          SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                ReturnButton(),
+                const SizedBox(height: 10),
+                ResultsRow(challengeResults: results),
+                const SizedBox(height: 15),
+                QuestionBox(question: question),
+                const SizedBox(height: 15),
+                BasicQuestionListOptions(
+                  listOptions: listOptions,
+                  handleClick: handleClick,
+                ),
+              ],
+            ),
           ),
         ],
       ),
