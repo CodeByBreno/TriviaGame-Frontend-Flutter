@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/global.dart';
+import 'package:trivia_game/utils/navigation.dart';
 import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/widgets/menu/main_page.dart';
 import 'package:trivia_game/widgets/components/button.dart';
@@ -60,10 +61,7 @@ class InterfaceHome extends StatelessWidget {
                           width: 200, 
                           height: 90,
                           onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => Menu()),
-                            );
+                            navigate(context, Menu());
                           },
                         ),
                     )

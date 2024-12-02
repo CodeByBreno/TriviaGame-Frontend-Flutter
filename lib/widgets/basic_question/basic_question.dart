@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:trivia_game/utils/sounds.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:trivia_game/config/global.dart';
+import 'package:trivia_game/utils/navigation.dart';
 import 'package:trivia_game/widgets/score/score.dart';
 import 'package:trivia_game/utils/shuffle_options.dart';
 import 'package:trivia_game/config/audios_project.dart';
@@ -65,11 +66,7 @@ class BasicQuestionState extends State<BasicQuestion> {
   }
   
   void endChallenge() {
-    Navigator.pushAndRemoveUntil(
-      context, 
-      MaterialPageRoute(builder: (context) => Score(results: results)), 
-      (Route<dynamic> route) => false
-    );
+    navigateAndRemoveUntil(context, Score(results: results));
   }
 
   Future<void> handleClick(OptionQuestionRepresentation optionRep) async {
@@ -78,6 +75,7 @@ class BasicQuestionState extends State<BasicQuestion> {
 
       setState(() {
         optionRep.highlightColor = OPTION_BACKGROUND_COLOR_CORRECT;
+        optionRep.active = false;
       });
 
       await Future.delayed(const Duration(milliseconds: 300));
@@ -104,12 +102,14 @@ class BasicQuestionState extends State<BasicQuestion> {
       setState(() {
         results[currentIndex] = QuestionManager.INCORRECT;
         optionRep.highlightColor = OPTION_BACKGROUND_COLOR_WRONG;
+        optionRep.active = false;
       });
 
       await Future.delayed(const Duration(milliseconds: 300));
 
       setState(() {
         optionRep.highlightColor = OPTION_BACKGROUND_COLOR_DISABLED;
+        optionRep.active = false;
       });
     }
   }

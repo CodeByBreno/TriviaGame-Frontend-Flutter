@@ -7,20 +7,23 @@ class BasicQuestionOption extends StatelessWidget {
   final double height;
   final double width;
   final double fontSize;
+  final bool enable;
 
   BasicQuestionOption({
+    super.key, 
     required this.text,
     required this.onPressed,
     required this.height,
     required this.width,
     required this.fontSize,
     this.color = Colors.white, 
+    this.enable = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: enable ? onPressed : null,
       child: 
         Container(
           height: height,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/utils/navigation.dart';
 import 'package:trivia_game/widgets/components/button.dart';
 
 class MinorButtonMainPage extends StatelessWidget {
@@ -21,10 +22,7 @@ class MinorButtonMainPage extends StatelessWidget {
         text: "Sobre o App", 
         fontSize: 18,
         onPressed: () {
-          Navigator.push(
-            context, 
-            MaterialPageRoute(builder: (context) => targetPage)
-          );
+          navigate(context, targetPage);
         }
       );
   }

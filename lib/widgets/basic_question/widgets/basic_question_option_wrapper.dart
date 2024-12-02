@@ -29,13 +29,22 @@ class BasicQuestionOptionWrapperState extends State<BasicQuestionOptionWrapper> 
     final optionRepresentation = widget.optionRepresentation;
 
     return 
-      BasicQuestionOption(
-        text: "${get_letter(widget.index)}) ${optionRepresentation.option.text}",
-        color: optionRepresentation.highlightColor ?? OPTION_BACKGROUND_COLOR_DEFAULT,
-        onPressed: () async { await widget.handleClick(widget.optionRepresentation); },
-        height: getHeightForOptionDimension(widget.dimension),
-        width: getWidthtForOptionDimension(widget.dimension),
-        fontSize: getFontSizeForOptionDimension(widget.dimension),
+      AnimatedSwitcher(
+        duration: const Duration(milliseconds: DEFAULT_TRANSITION_TIME),
+        transitionBuilder: (Widget child, Animation<double> animation) {
+          return FadeTransition(opacity: animation, child: child);
+        },
+        child:
+          BasicQuestionOption(
+            key: ValueKey(optionRepresentation.option.id_option_question),
+            text: "${get_letter(widget.index)}) ${optionRepresentation.option.text}",
+            color: optionRepresentation.highlightColor ?? OPTION_BACKGROUND_COLOR_DEFAULT,
+            onPressed: () async { await widget.handleClick(widget.optionRepresentation); },
+            height: getHeightForOptionDimension(widget.dimension),
+            width: getWidthtForOptionDimension(widget.dimension),
+            fontSize: getFontSizeForOptionDimension(widget.dimension),
+            enable: optionRepresentation.active,
+          ),
       );
   }
 }

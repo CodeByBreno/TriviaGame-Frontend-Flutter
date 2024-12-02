@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:trivia_game/config/global.dart';
+import 'package:trivia_game/utils/navigation.dart';
 import 'package:trivia_game/config/images_project.dart';
 import 'package:trivia_game/widgets/components/box.dart';
 import 'package:trivia_game/widgets/menu/main_page.dart';
@@ -97,10 +98,7 @@ class Score extends StatelessWidget {
                     height: 100,
                     width: 240,
                     onPressed: () {
-                      Navigator.pushAndRemoveUntil(
-                        context, 
-                        MaterialPageRoute(builder: (context) => Menu()), 
-                        (Route<dynamic> route) => false);
+                      navigateAndRemoveUntil(context, Menu());
                     })
                 ],
               ),

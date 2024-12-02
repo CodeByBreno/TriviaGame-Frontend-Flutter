@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:trivia_game/utils/navigation.dart';
 import 'package:trivia_game/widgets/components/button.dart';
 import 'package:trivia_game/widgets/basic_question/basic_question.dart';
 import 'package:trivia_game/widgets/basic_question/tools/question_manager.dart';
@@ -16,10 +17,7 @@ class RandomQuestionMainPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         fontSize: 21,
         onPressed: () {
-          Navigator.push(
-            context, 
-            MaterialPageRoute(builder: (context) => BasicQuestion(challenge: QuestionManager.getChallenge(1)))
-          );
+          navigate(context, BasicQuestion(challenge: QuestionManager.getChallenge(1)));
         }
       );
   }

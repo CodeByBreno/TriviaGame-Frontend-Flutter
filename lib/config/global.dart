@@ -27,3 +27,6 @@ const CAPTION_HOME = "Conheça um pouco mais da região através de um jogo de p
 
 // Default Padding
 const DEFAULT_PADDING = const EdgeInsets.symmetric(horizontal: 20, vertical: 30);
+
+// Transition time
+const DEFAULT_TRANSITION_TIME = 200;
