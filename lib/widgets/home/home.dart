@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:trivia_game/widgets/home/widgets/interface_home.dart';
+import 'package:trivia_game/widgets/home/interface_home.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget {
           ConstrainedBox(
             constraints: const BoxConstraints(maxWidth: 720),
             child: const InterfaceHome(),
-          )),
+          )
+        ),
     );
     }
 }
