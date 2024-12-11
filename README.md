@@ -11,12 +11,12 @@ Apesar da disciplina ter chegado ao fim, o projeto ainda não está concluído. 
 - [ ] Melhorar a fluidez da aplicação.
 
 <strong>Versão Atual do Projeto </strong>
-<p margin=auto>
+<p align="center">
 <img src="https://github.com/user-attachments/assets/90237646-1886-4c47-bb60-a368989146ae" width=240>
 <img src="https://github.com/user-attachments/assets/5f5c351d-c896-445c-8da7-7947014479ec" width=240>
 <img src="https://github.com/user-attachments/assets/00fc1989-cef7-44f0-879a-00173fab8955" width=244>
 </p>
-<p margin=auto>
+<p align="center">
 <img src="https://github.com/user-attachments/assets/916f0ae6-37d7-4eeb-b431-28063a4a6fec" width=240>
 <img src="https://github.com/user-attachments/assets/97fe0004-6b00-4823-b5fe-53402117a921" width=246>
 <img src="https://github.com/user-attachments/assets/86a48941-4697-4442-a28d-05fc6ad89bf8" width=238>
@@ -35,18 +35,18 @@ Outra opção é simplesmente acessar o [**link de download do APK**](https://dr
 
 <h2><Strong>Design Inicial do Projeto: </Strong></h2>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1fb7f46f-b29c-4640-890d-317ff0281646" width="500" alt="img_inicial_projeto">
+  <img src="https://github.com/user-attachments/assets/1fb7f46f-b29c-4640-890d-317ff0281646" width="650" alt="img_inicial_projeto">
 </p>
 
 <h2><Strong>Design da primeira versão estável</Strong></h2>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ee7dbc68-c058-4a9e-a28a-dbd630524ff4" width="500" alt="img_pokemons_api">
+  <img src="https://github.com/user-attachments/assets/ee7dbc68-c058-4a9e-a28a-dbd630524ff4" width="650" alt="img_pokemons_api">
 </p>
 
 <h2><Strong>Design da versão atual</Strong></h2>
 <p>Essa é a que foi entregue como trabalho de ES3. Feita em +/- dois dias (com muitas pausas, porque tive aula e outras coisas no meio tempo kakaka)</p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4cb3a47e-7cf3-4e99-bcfb-69bbe0e66ec7" width="500" alt="versao_1_pokedex">
+  <img src="https://github.com/user-attachments/assets/4cb3a47e-7cf3-4e99-bcfb-69bbe0e66ec7" width="650" alt="versao_1_pokedex">
 </p>
 
 
