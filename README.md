@@ -44,9 +44,9 @@ Outra opção é simplesmente acessar o [**link de download do APK**](https://dr
 </p>
 
 <h2><Strong>Design da versão atual</Strong></h2>
-<p>Essa é a que foi entregue como trabalho de ES3. Feita em +/- dois dias (com muitas pausas, porque tive aula e outras coisas no meio tempo kakaka)</p>
+<p>Essa é a que foi entregue como trabalho de ES3</p>
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4cb3a47e-7cf3-4e99-bcfb-69bbe0e66ec7" width="650" alt="versao_1_pokedex">
+  <img src="https://github.com/user-attachments/assets/4cb3a47e-7cf3-4e99-bcfb-69bbe0e66ec7" width="750" alt="versao_1_pokedex">
 </p>
 
 
